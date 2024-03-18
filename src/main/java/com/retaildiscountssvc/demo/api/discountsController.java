@@ -20,14 +20,14 @@ public class discountsController {
     }
 
     private double getBaseDiscount(final double billedAmount) {
-        int count = (int) billedAmount/100;
-        int discount = count * BASE_DISCOUNT;
+        final int count = (int) billedAmount / 100;
+        final int discount = count * BASE_DISCOUNT;
         return billedAmount - discount;
     }
 
     private double getPercentageDiscount(final UserType userType,
-                                          final LocalDate joinDate,
-                                          final double billedAmount) {
+                                         final LocalDate joinDate,
+                                         final double billedAmount) {
         return switch (userType) {
             case UserType.EMPLOYEE -> billedAmount - (billedAmount * 0.3);
             case UserType.AFFILIATE -> billedAmount - (billedAmount * 0.1);
