@@ -1,5 +1,6 @@
-package com.retaildiscountssvc.demo.api;
+package com.retaildiscountssvc.demo.api.controller;
 
+import com.retaildiscountssvc.demo.api.model.UserType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

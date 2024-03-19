@@ -53,6 +53,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>retail-discounts-svc</finalName>
 	</build>
 
 </project>

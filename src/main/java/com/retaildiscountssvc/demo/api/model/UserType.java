@@ -1,4 +1,4 @@
-package com.retaildiscountssvc.demo.api;
+package com.retaildiscountssvc.demo.api.model;
 
 public enum UserType {
     AFFILIATE,
