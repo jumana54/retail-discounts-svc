@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/user")
-public class userController {
+public class UserController {
 
     @Autowired
     private UserService userService;
@@ -23,7 +23,7 @@ public class userController {
     }
 
     @GetMapping("/login/{id}")
-    public ResponseEntity<User> login(@PathVariable final long id) {
+    public ResponseEntity<User> login(@PathVariable final int id) {
         User user = userService.findUserById(id);
         return new ResponseEntity<>(user, user == null ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }

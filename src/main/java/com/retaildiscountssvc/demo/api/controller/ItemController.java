@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/item")
-public class itemController {
+public class ItemController {
 
     @Autowired
     private ItemService itemService;
@@ -27,7 +27,7 @@ public class itemController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Item> getItem(@PathVariable final long id) {
+    public ResponseEntity<Item> getItem(@PathVariable final int id) {
         Item item = itemService.findItemById(id);
         return new ResponseEntity<>(item, item == null ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }

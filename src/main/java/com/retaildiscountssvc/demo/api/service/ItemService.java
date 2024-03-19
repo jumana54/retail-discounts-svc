@@ -21,11 +21,11 @@ public class ItemService {
         return repo.findAll();
     }
 
-    public List<Item> findAllItemsById(final List<Long> ids) {
+    public List<Item> findAllItemsById(final List<Integer> ids) {
         return repo.findAllById(ids);
     }
 
-    public Item findItemById(final long id) {
+    public Item findItemById(final int id) {
         return repo.findById(id).orElse(null);
     }
 }

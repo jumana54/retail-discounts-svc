@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-public class discountsController {
+public class DiscountsController {
 
     @Autowired
     private DiscountsService discountsService;
@@ -27,8 +27,8 @@ public class discountsController {
     private UserService userService;
 
     @GetMapping("/payable")
-    public ResponseEntity<Double> getPayableAmount(@RequestParam final long userId,
-                                                   @RequestParam final List<Long> itemIds) throws IOException {
+    public ResponseEntity<Double> getPayableAmount(@RequestParam final int userId,
+                                                   @RequestParam final List<Integer> itemIds) throws IOException {
         final User user = userService.findUserById(userId);
         if (user == null) {
             throw new IOException("User not found");

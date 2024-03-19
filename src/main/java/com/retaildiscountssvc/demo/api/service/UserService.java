@@ -17,7 +17,7 @@ public class UserService {
         return repo.save(user);
     }
 
-    public User findUserById(@PathVariable final long id) {
+    public User findUserById(@PathVariable final int id) {
         return repo.findById(id).orElse(null);
     }
 }
