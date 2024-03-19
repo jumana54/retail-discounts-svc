@@ -17,5 +17,5 @@ public class User {
     private long id;
     private String name;
     private UserType type;
-    private LocalDate jointDate;
+    private LocalDate joinDate;
 }
