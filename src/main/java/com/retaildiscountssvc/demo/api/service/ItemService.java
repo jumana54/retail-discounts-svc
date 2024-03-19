@@ -21,6 +21,10 @@ public class ItemService {
         return repo.findAll();
     }
 
+    public List<Item> findAllItemsById(final List<Long> ids) {
+        return repo.findAllById(ids);
+    }
+
     public Item findItemById(final long id) {
         return repo.findById(id).orElse(null);
     }

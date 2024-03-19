@@ -14,21 +14,21 @@ import java.util.List;
 public class itemController {
 
     @Autowired
-    private ItemService service;
+    private ItemService itemService;
 
     @PostMapping()
     public ResponseEntity<List<Item>> addItems(@RequestBody final List<Item> items) {
-        return new ResponseEntity<>(service.saveItems(items), HttpStatus.OK);
+        return new ResponseEntity<>(itemService.saveItems(items), HttpStatus.OK);
     }
 
     @GetMapping()
     public ResponseEntity<List<Item>> getItems() {
-        return new ResponseEntity<>(service.findAllItems(), HttpStatus.OK);
+        return new ResponseEntity<>(itemService.findAllItems(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Item> getItem(@PathVariable final long id) {
-        Item item = service.findItemById(id);
+        Item item = itemService.findItemById(id);
         return new ResponseEntity<>(item, item == null ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 }

@@ -14,17 +14,17 @@ import java.time.LocalDate;
 public class userController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
     @PostMapping("/signup")
     public ResponseEntity<User> signup(@RequestBody final User user) {
         user.setJoinDate(LocalDate.now());
-        return new ResponseEntity<>(service.saveUser(user), HttpStatus.OK);
+        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
     }
 
     @GetMapping("/login/{id}")
     public ResponseEntity<User> login(@PathVariable final long id) {
-        User user = service.getUser(id);
+        User user = userService.findUserById(id);
         return new ResponseEntity<>(user, user == null ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 }
