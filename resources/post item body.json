@@ -1,0 +1,42 @@
+[
+    {
+		"id": 1,
+		"type": "YARD",
+		"price": 15
+	},
+	{
+		"id": 2,
+		"type": "ROOM",
+		"price": 140
+	},
+{
+		"id": 3,
+		"type": "ROOM",
+		"price": 75
+	},
+	{
+		"id": 4,
+		"type": "GROCERY",
+		"price": 4
+	},
+	{
+		"id": 5,
+		"type": "ROOM",
+		"price": 30
+	},
+	{
+		"id": 6,
+		"type": "YARD",
+		"price": 11
+	},
+	{
+		"id": 7,
+		"type": "GROCERY",
+		"price": 2.5
+	},
+	{
+		"id": 8,
+		"type": "GROCERY",
+		"price": 5
+	}
+]
