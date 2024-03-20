@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "bc4a14f8-ae19-4de9-8b19-80e9cb27ac1b",
+		"name": "retail discounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4188532"
+	},
+	"item": [
+		{
+			"name": "Get payable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/payable?userId=0512345678&itemIds=2,3,7,8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payable"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "0512345678"
+						},
+						{
+							"key": "itemIds",
+							"value": "2,3,7,8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"0512345678\",\r\n    \"name\": \"Jumana\",\r\n    \"type\": \"EMPLOYEE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/login/{id} Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/login/512345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login",
+						"512345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n\t\t\"id\": 1,\r\n\t\t\"type\": \"YARD\",\r\n\t\t\"price\": 15\r\n\t},\r\n\t{\r\n\t\t\"id\": 2,\r\n\t\t\"type\": \"ROOM\",\r\n\t\t\"price\": 140\r\n\t},\r\n{\r\n\t\t\"id\": 3,\r\n\t\t\"type\": \"ROOM\",\r\n\t\t\"price\": 75\r\n\t},\r\n\t{\r\n\t\t\"id\": 4,\r\n\t\t\"type\": \"GROCERY\",\r\n\t\t\"price\": 4\r\n\t},\r\n\t{\r\n\t\t\"id\": 5,\r\n\t\t\"type\": \"ROOM\",\r\n\t\t\"price\": 30\r\n\t},\r\n\t{\r\n\t\t\"id\": 6,\r\n\t\t\"type\": \"YARD\",\r\n\t\t\"price\": 11\r\n\t},\r\n\t{\r\n\t\t\"id\": 7,\r\n\t\t\"type\": \"GROCERY\",\r\n\t\t\"price\": 2.5\r\n\t},\r\n\t{\r\n\t\t\"id\": 8,\r\n\t\t\"type\": \"GROCERY\",\r\n\t\t\"price\": 5\r\n\t}\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/item",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/item/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/item/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
