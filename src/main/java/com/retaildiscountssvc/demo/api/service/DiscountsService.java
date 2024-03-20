@@ -3,7 +3,6 @@ package com.retaildiscountssvc.demo.api.service;
 import com.retaildiscountssvc.demo.api.model.Item;
 import com.retaildiscountssvc.demo.api.model.UserType;
 import com.retaildiscountssvc.demo.api.utils.DiscountUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -14,6 +13,7 @@ import java.util.List;
 public class DiscountsService {
 
     private static final int BASE_DISCOUNT = 5;
+    private static final int BASE_DISCOUNT_ROUND = 100;
 
     DiscountsService() {
     }
@@ -30,7 +30,7 @@ public class DiscountsService {
     }
 
     public double getBaseDiscountedAmount(final double amount) {
-        final int count = (int) amount / 100;
+        final int count = (int) amount / BASE_DISCOUNT_ROUND;
         final int discount = count * BASE_DISCOUNT;
         return amount - discount;
     }
