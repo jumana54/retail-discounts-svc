@@ -1,12 +1,7 @@
-## App
-### Build App:
-From the command line within the project directory run `mvn install`.
-### Deploy App:
-1. Run `docker pull mongo:latest` to pull mongodb library in docker if you do not have it already.
-2. Run `docker run -d -p 27017:27017 --name retail-discounts-mongodb mongo:latest` to run mongo image in retail-discounts-mongodb container. 
-3. Run `docker build -t retail-discounts-svc:1.0 .` to build retail-discounts-svc image.
-4. Run `docker run -p 8080:8080 --name retail-discounts-svc --link retail-discounts-mongodb:mongo -d retail-discounts-svc:1.0`
-to run retail-discounts-svc image in retail-discounts-mongodb container.
+## Build & Deploy App:
+From the command line within the project directory run the following commands:
+1. `mvn install`
+2. `docker-compose -f retail-discounts-services.yaml up`
 
 ## Testing
 From the command line within the project directory run `mvn test jacoco:report`.

@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  retail-discounts-mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+  retail-discounts-svc:
+    build: .
+    ports:
+      - 8080:8080
