@@ -3,6 +3,7 @@ package com.retaildiscountssvc.demo.api.service;
 import com.retaildiscountssvc.demo.api.model.Item;
 import com.retaildiscountssvc.demo.api.model.UserType;
 import com.retaildiscountssvc.demo.api.utils.DiscountUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -14,9 +15,12 @@ public class DiscountsService {
 
     private static final int BASE_DISCOUNT = 5;
 
-    public double getPercentageDiscountAmount(final UserType userType,
-                                              final LocalDate joinDate,
-                                              final List<Item> items) {
+    DiscountsService() {
+    }
+
+    public double getPercentageDiscountedAmount(final UserType userType,
+                                                final LocalDate joinDate,
+                                                final List<Item> items) {
         final double discountableAmount = DiscountUtil.getDiscountableAmount(items);
         return switch (userType) {
             case UserType.EMPLOYEE -> discountableAmount - (discountableAmount * 0.3);

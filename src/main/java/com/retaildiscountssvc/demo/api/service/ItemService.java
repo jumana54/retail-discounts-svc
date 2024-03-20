@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class ItemService {
 
-    @Autowired
-    private ItemRepository repo;
+    private final ItemRepository repo;
+
+    ItemService(@Autowired ItemRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Item> saveItems(final List<Item> items) {
         return repo.saveAll(items);

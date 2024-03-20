@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/item")
 public class ItemController {
 
-    @Autowired
-    private ItemService itemService;
+    private final ItemService itemService;
+
+    ItemController(@Autowired ItemService itemService) {
+        this.itemService = itemService;
+    }
 
     @PostMapping()
     public ResponseEntity<List<Item>> addItems(@RequestBody final List<Item> items) {

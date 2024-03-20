@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository repo;
+    private final UserRepository repo;
+
+    UserService(@Autowired UserRepository repo) {
+        this.repo = repo;
+    }
 
     public User saveUser(@RequestBody final User user) {
         return repo.save(user);

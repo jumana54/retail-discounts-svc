@@ -19,12 +19,17 @@ import java.util.List;
 @RestController
 public class DiscountsController {
 
-    @Autowired
-    private DiscountsService discountsService;
-    @Autowired
-    private ItemService itemService;
-    @Autowired
-    private UserService userService;
+    private final DiscountsService discountsService;
+    private final ItemService itemService;
+    private final UserService userService;
+
+    DiscountsController(@Autowired DiscountsService discountsService,
+                        @Autowired ItemService itemService,
+                        @Autowired UserService userService) {
+        this.discountsService = discountsService;
+        this.itemService = itemService;
+        this.userService = userService;
+    }
 
     @GetMapping("/payable")
     public ResponseEntity<Double> getPayableAmount(@RequestParam final int userId,
@@ -34,7 +39,7 @@ public class DiscountsController {
             throw new IOException("User not found");
         } else {
             final List<Item> items = itemService.findAllItemsById(itemIds);
-            final double percentageDiscountedAmount = discountsService.getPercentageDiscountAmount(user.getType(), user.getJoinDate(), items);
+            final double percentageDiscountedAmount = discountsService.getPercentageDiscountedAmount(user.getType(), user.getJoinDate(), items);
             final double nonDiscountableAmount = DiscountUtil.getNonDiscountableAmount(items);
             final double payableAmount = discountsService.getBaseDiscountedAmount(percentageDiscountedAmount + nonDiscountableAmount);
             return new ResponseEntity<>(payableAmount, HttpStatus.OK);

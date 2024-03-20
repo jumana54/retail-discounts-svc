@@ -13,8 +13,11 @@ import java.time.LocalDate;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    UserController(@Autowired UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping("/signup")
     public ResponseEntity<User> signup(@RequestBody final User user) {
